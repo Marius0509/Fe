@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='UTF-8' name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Fe</title>
-        <link rel='stylesheet' href='style.css'>
-    </head>
-    <body>
-        <div id='fe-button' class='ops-button' onmouseover='onFeMouseOver()' onclick='onFeClick()'>Fe</div>
-        <script src='script.js'></script>
-    </body>
+
+<head>
+    <meta charset='UTF-8' name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Fe</title>
+    <style>
+        .ops-button {
+            align-items: center;
+            background-color: #c7c7c7;
+            border-radius: 2vmax;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            font: 2vmax sans-serif;
+            height: 4vmax;
+            justify-content: center;
+            position: absolute;
+            user-select: none;
+            width: 10vmax;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='fe-button' class='ops-button' onmouseover='moveFe()' onclick='moveFe()'>Fe</div>
+    <script>
+        function randomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function moveFe() {
+            let button = document.getElementById('fe-button');
+            button.style.top = randomInteger(0, window.innerHeight - button.offsetHeight) + 'px';
+            button.style.left = randomInteger(0, window.innerWidth - button.offsetWidth) + 'px';
+        }
+    </script>
+</body>
+
 </html>
